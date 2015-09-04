@@ -12,3 +12,9 @@ class CadastroTestCase(SimpleTestCase):
         self.assertContains(response, 'name="email"')
         self.assertContains(response, 'name="senha1"')
         self.assertContains(response, 'name="senha2"')
+
+    def test_send_empty_form_fails(self):
+        data = {}
+        response = self.client.post(' /cadastro', data)
+        self.assertContains(response, 'This field is required.')
+    
