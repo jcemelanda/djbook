@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Bem vindo ao DJBook</h1>
+    <h2>Entre agora mesmo!</h2>
+    <form action="." method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enviar</button>
+    </form>
+{% endblock %}

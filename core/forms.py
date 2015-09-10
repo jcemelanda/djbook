@@ -14,3 +14,8 @@ class CadastroForm(Form):
         if self.cleaned_data['senha2'] != p1:
             raise ValidationError('Senhas não conferem')
         return p1
+
+
+class LoginForm(Form):
+    usuario = CharField(label='usuario', max_length=30)
+    senha = CharField(label='confirmação de senha', widget=PasswordInput)
